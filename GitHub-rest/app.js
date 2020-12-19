@@ -1,5 +1,6 @@
 function handleInput() {
     var username = document.getElementById('username').value
+    
     console.log(username)
 
 }
@@ -12,4 +13,5 @@ async function getRepos() {
     const result = await response.json()
 
     result.items.forEach(i=>console.log(i.full_name))
+    result.items.forEach(i=>console.log(i.language))
 }
