@@ -2,6 +2,8 @@ function handleInput() {
     var username = document.getElementById('username').value
     
     console.log(username)
+    var user = document.getElementById("user");
+    user.innerHTML = username;
 
 }
 const btnRepos = document.getElementById("btnRepos")
