@@ -20,9 +20,17 @@ async function getRepos() {
 }
 
 async function details(username,token){
-    let url = `https://api.github.com/users/${username}/repos`
-    let t = await get(url, token)
-    console.log(t)
+    url = `https://api.github.com/users/${username}`;
+    let user = await get(url, token).catch(error => console.error(error));
+    console.log(user)
+    let login = document.getElementById('login');
+    login.innerHTML = `<b>Login ID: </b>${user.login}`;
+    
+    let num = document.getElementById('num');
+    num.innerHTML = `<b>ID: </b>${user.id}`;
+    let name = document.getElementById('name');
+    name.innerHTML = `<b>Name: </b>${user.name}`;
+    
 }
 async function get(url, token) {
     const headers = {
