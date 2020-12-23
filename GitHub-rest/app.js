@@ -14,9 +14,19 @@ async function getRepos() {
     const url = "https://api.github.com/search/repositories?q=stars:>100000"
     const response = await fetch(url)
     const result = await response.json()
+    result.items.forEach(i=>{
 
-    result.items.forEach(i=>console.log(i.full_name))
-    result.items.forEach(i=>console.log(i.language))
+        const anchor = document.createElement("a")
+        anchor.href = i.html_url;
+        anchor.textContent = i.name;
+        divResult.appendChild(anchor)
+        divResult.appendChild(document.createElement("br"))
+
+
+    })
+    //console.log(result)
+    //result.items.forEach(i=>console.log(i.full_name))
+    //result.items.forEach(i=>console.log(i.language))
 }
 
 async function details(username,token){
