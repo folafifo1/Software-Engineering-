@@ -5,7 +5,7 @@ function handleInput() {
     var user = document.getElementById("user");
     user.innerHTML = username;
     details(username,token)
-
+    divResult1.innerHTML = " "
 }
 const btnRepos = document.getElementById("btnRepos")
 btnRepos.addEventListener("click", getRepos)
@@ -43,6 +43,7 @@ async function details(username,token){
 
     let url1 = `https://api.github.com/users/${username}/repos`
      let t = await get(url1, token)
+    
      t.forEach(i=>{
 
         const anchor = document.createElement("a")
@@ -53,6 +54,7 @@ async function details(username,token){
 
 
     })
+
      console.log(t)
     
 }
