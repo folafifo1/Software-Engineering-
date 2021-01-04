@@ -1,7 +1,41 @@
 *{
+    background-color: lightgreen;
+    
+}
+
+.buton{
+    color: black;
+    font-weight: bold;
+    font-size: 17px;
+}
+.tokenbox{
+    color: black;
+    font-weight: bold;
+    font-size: 17px;
+}
+.header{
+    font-size: 20px
+}
+
+.header1{
+    font-size: 20px
+}
+.info{
+    font-family: cursive;
+    text-decoration-color: blue;
+    font-size: 19px;
+}
+.opening{
+    clear: both;
+
+}
+.opening .user{
+    display: inline;
+    font-size: 25px;
     color: black;
 }
-.page{
-    background-color: rgb(255, 0, 200);
-    
+.opening .token{
+    display: inline;
+    font-size: 25px;
+    color: black
 }

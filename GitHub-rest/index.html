@@ -5,12 +5,14 @@
 <meta name="viewport" content="width=device-width, initial scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
-<body class="page">
-     <b>Username:</b> <input id='username' type='text'>
-     <b>Token:</b> <input id='token' type='text' placeholder='required'>
+<body>
+    <div class= "opening">
+     <h3 class="user"><b>Username:</b></h3> <input id='username' type='text' placeholder='Github Username' class="buton">
+     <h3 class="token"><b>Token:</b></h3> <input id='token' type='text' placeholder='required' class="tokenbox">
      <button onclick=handleInput()>Submit</button>
      <button id = 'btnRepos'>Popular Repos</button>
-     <div>
+     </div>
+     <div class="info">
       <p id="login"></p>
       <p id="num"></p>
       <p id="name"></p>
@@ -18,10 +20,11 @@
       <p id="urls"></p>
       <p id="followers"></p>
     </div>
-   <b>User Repos:</b> <div id = 'divResult1'></div>
-   <b><br>Popular Repos:</b> <div id = 'divResult'></div>
+   <p class="header"><b>User Repos:</b></p> <div id = 'divResult1'></div>
+   <p class="header1"><b><br>Popular Repos:</b> </p><div id = 'divResult'></div>
    
 </body>
 
   <script src='app.js'></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
 </html>
