@@ -9,7 +9,7 @@ function handleInput() {
 const btnRepos = document.getElementById("btnRepos")
 btnRepos.addEventListener("click", getRepos)
 async function getRepos() {
-    
+    divResult.innerHTML= ""
     let url = "https://api.github.com/search/repositories?q=stars:>150000"
     let response = await fetch(url)
     const result = await response.json()
@@ -36,9 +36,14 @@ async function details(username,token){
     url = `https://api.github.com/users/${username}`;
     let user = await get(url, token).catch(error => console.error(error));
     console.log(user)
+    
     let login = document.getElementById('login');
     login.innerHTML = `<b>Login ID: </b>${user.login}`;
     
+    let picture = document.getElementById('profilepic');
+    picture.src= user.avatar_url;
+
+
     let num = document.getElementById('num');
     num.innerHTML = `<b>ID: </b>${user.id}`;
     let name = document.getElementById('name');

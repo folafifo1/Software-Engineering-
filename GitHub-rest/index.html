@@ -9,10 +9,11 @@
     <div class= "opening">
      <h3 class="user"><b>Username:</b></h3> <input id='username' type='text' placeholder='Github Username' class="buton">
      <h3 class="token"><b>Token:</b></h3> <input id='token' type='text' placeholder='required' class="tokenbox">
-     <button onclick=handleInput()>Submit</button>
-     <button id = 'btnRepos'>Popular Repos</button>
+     <button class="click" onclick=handleInput()>Submit</button>
+     <button class="click1" id = 'btnRepos'>Popular Repos</button>
      </div>
      <div class="info">
+       <img id="profilepic" src="" class="images" >
       <p id="login"></p>
       <p id="num"></p>
       <p id="name"></p>
@@ -20,8 +21,8 @@
       <p id="urls"></p>
       <p id="followers"></p>
     </div>
-   <p class="header"><b>User Repos:</b></p> <div id = 'divResult1'></div>
-   <p class="header1"><b><br>Popular Repos:</b> </p><div id = 'divResult'></div>
+   <p class="header"><b>User Repos:</b></p> <div class="userrepos" id = 'divResult1'></div>
+   <p class="header1"><b><br>Popular Repos:</b> </p><div class="poprepos" id = 'divResult'></div>
    
 </body>
 

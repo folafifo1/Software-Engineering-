@@ -7,23 +7,39 @@
     color: black;
     font-weight: bold;
     font-size: 17px;
+    background-color: aliceblue;
+    border-radius: 5px;
 }
 .tokenbox{
     color: black;
     font-weight: bold;
     font-size: 17px;
+    background-color: aliceblue;
+    border-radius: 5px;
 }
 .header{
-    font-size: 20px
+    font-size: 28px;
+    color: blueviolet;
+    font-family: Apple Chancery;
 }
 
 .header1{
-    font-size: 20px
+    font-size: 28px;
+    color: blueviolet;
+    font-family: Apple Chancery;
+}
+.userrepos{
+    font-size: 19px;
+    font-family: Palatino;
+}
+.poprepos{
+    font-size: 19px;
+    font-family: Palatino;
 }
 .info{
-    font-family: cursive;
+    font-family: American Typewriter;
     text-decoration-color: blue;
-    font-size: 19px;
+    font-size: 24px;
 }
 .opening{
     clear: both;
@@ -39,3 +55,42 @@
     font-size: 25px;
     color: black
 }
+
+.images{
+    width: 150px;
+    height: 150px;
+    border: none;
+}
+
+.click{
+  background-color: lightgreen; /* Green */
+  transition-duration: 0.4s; 
+  color: black;
+  padding: 6px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  
+}
+.click:hover {
+    background-color: black; /* Green */
+    color: white;
+  }
+
+.click1{
+    background-color: lightgreen; /* Green */
+    transition-duration: 0.7s; 
+    color: black;
+    padding: 6px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+.click1:hover {
+      background-color: black; /* Green */
+      color: white;
+    }
