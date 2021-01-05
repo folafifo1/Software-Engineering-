@@ -55,11 +55,19 @@
     font-size: 25px;
     color: black
 }
-
+.size{
+    /* float: left;
+    padding-left:1000; */
+    /* display: inline; */
+    width: 100px
+}
 .images{
     width: 150px;
     height: 150px;
-    border: none;
+    border: 0;
+    
+    text-decoration: none;
+    outline: none;
 }
 
 .click{

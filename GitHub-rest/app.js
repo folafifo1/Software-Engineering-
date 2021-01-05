@@ -5,6 +5,7 @@ function handleInput() {
     details(username,token)
     divResult1.innerHTML = " "
     urls.innerHTML = " "
+    if (pieChart != null) pieChart.destroy();
 }
 const btnRepos = document.getElementById("btnRepos")
 btnRepos.addEventListener("click", getRepos)
@@ -69,7 +70,21 @@ async function details(username,token){
     
         let url1 = `https://api.github.com/users/${username}/repos`
      let t = await get(url1, token)
+     
+     console.log(t)
+     t.sort(function(a, b){
+        return b.size-a.size
+    })
     
+    drawpie(t);
+    t.forEach(i=>console.log(i.size))
+
+
+
+
+
+
+
      t.forEach(i=>{
 
         const anchor = document.createElement("a")
@@ -100,3 +115,80 @@ async function get(url, token) {
     let data = await response.json()
     return data;
 }
+
+
+async function drawpie(vals){
+    var firstFive = vals.slice(0,5);
+    var names = new Array();
+    var numbers = new Array();
+    for(i=0;i<firstFive.length;i++){
+        names[i] = firstFive[i].name   
+    }
+    for(i=0;i<firstFive.length;i++){
+        numbers[i] = firstFive[i].size   
+    }
+    // for(i=0;i<names.length && numbers.length;i++){
+       
+    //     console.log(names[i] + " Size = " + numbers[i])
+    // }
+
+
+
+
+   firstFive.forEach(i=>console.log(i.name))
+    let sizeChart = document.getElementById('pie').getContext('2d');
+     pieChart = new Chart(sizeChart, {
+        type: 'pie',
+        data:{
+            labels: names,
+            datasets: [{
+                label:'Size in Kilobytes',
+                data: numbers,
+                backgroundColor:[
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    
+                    
+                  ],
+                  borderWidth:1,
+                  borderColor:'#777',
+                  hoverBorderWidth:3,
+                  hoverBorderColor:'#000'
+            }],
+            
+        },
+
+        options:{
+            title:{
+                display:true,
+                text:'Largest Repositories by Size(Kb)',
+                fontSize:25,
+                fontColor: 'black',
+              },
+              
+
+        }
+
+
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+var pieChart;

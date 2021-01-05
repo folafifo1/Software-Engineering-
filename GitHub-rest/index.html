@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial scale=1.0">
 <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <div class= "opening">
@@ -13,19 +14,29 @@
      <button class="click1" id = 'btnRepos'>Popular Repos</button>
      </div>
      <div class="info">
-       <img id="profilepic" src="" class="images" >
+       <img id="profilepic" src='' class="images" >
       <p id="login"></p>
       <p id="num"></p>
       <p id="name"></p>
       <p id="location"></p>
       <p id="urls"></p>
       <p id="followers"></p>
+      
     </div>
+
+
+           <div>
+            <canvas id="pie" class="size"></canvas>
+            <canvas id="line" class="size"></canvas>
+
+
+        </div>
+
    <p class="header"><b>User Repos:</b></p> <div class="userrepos" id = 'divResult1'></div>
    <p class="header1"><b><br>Popular Repos:</b> </p><div class="poprepos" id = 'divResult'></div>
    
 </body>
 
-  <script src='app.js'></script>
-  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src='app.js' defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 </html>
