@@ -55,13 +55,9 @@
     font-size: 25px;
     color: black
 }
-.size{
-    /* float: left;
-    padding-left:1000; */
-    /* display: inline; */
-    width: 100px
-}
+
 .images{
+    float: center; 
     width: 150px;
     height: 150px;
     border: 0;

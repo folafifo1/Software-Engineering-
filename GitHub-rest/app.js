@@ -6,6 +6,8 @@ function handleInput() {
     divResult1.innerHTML = " "
     urls.innerHTML = " "
     if (pieChart != null) pieChart.destroy();
+    if (lineChart != null) lineChart.destroy();
+
 }
 const btnRepos = document.getElementById("btnRepos")
 btnRepos.addEventListener("click", getRepos)
@@ -79,9 +81,11 @@ async function details(username,token){
     drawpie(t);
     t.forEach(i=>console.log(i.size))
 
-
-
-
+    t.sort(function(a, b){
+        return b.stargazers_count-a.stargazers_count
+    })
+    drawline(t);
+    t.forEach(i=>console.log(i.stargazers_count))
 
 
 
@@ -133,6 +137,7 @@ async function drawpie(vals){
     // }
 
 
+    Chart.defaults.global.defaultFontColor = '#000';
 
 
    firstFive.forEach(i=>console.log(i.name))
@@ -171,24 +176,66 @@ async function drawpie(vals){
               
 
         }
-
-
-
-    })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  })
 }
-var pieChart;
+
+
+async function drawline(vals){
+    var firstFive = vals.slice(0,5);
+    var names = new Array();
+    var numbers = new Array();
+    for(i=0;i<firstFive.length;i++){
+        names[i] = firstFive[i].name   
+    }
+    for(i=0;i<firstFive.length;i++){
+        numbers[i] = firstFive[i].stargazers_count   
+    }
+   
+
+    Chart.defaults.global.defaultFontColor = '#000';
+
+
+   firstFive.forEach(i=>console.log(i.name))
+    let starChart = document.getElementById('line').getContext('2d');
+     lineChart = new Chart(starChart, {
+        type: 'line',
+        data:{
+            labels: names,
+            datasets: [{
+                label:'Number of Stars',
+                data: numbers,
+                backgroundColor:[
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    
+                    
+                  ],
+                  borderWidth:1,
+                  borderColor:'#777',
+                  hoverBorderWidth:3,
+                  hoverBorderColor:'#000'
+            }],
+            
+        },
+
+        options:{
+            title:{
+                display:true,
+                text:'User Repos With Most Stars',
+                fontSize:25,
+                fontColor: 'black',
+              },
+              
+
+        }
+  })
+}
+
+
+
+
+var pieChart = null;
+var lineChart = null;
